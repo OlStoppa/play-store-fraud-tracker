@@ -1,0 +1,31 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  .sidebar {
+    width: 15%;
+    height: 100%;
+    background: #161a26;
+    color: #9a9ca5;
+    padding: 20px 20px;
+
+    >div {
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+
+      &.active {
+        background: #e3ffc4;
+        color: #27450c;
+      }
+    }
+  }
+
+  main {
+    flex: 1;
+    background: white;
+    padding: 50px 50px;
+    color: black;
+  }
+}

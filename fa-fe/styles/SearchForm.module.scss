@@ -1,0 +1,30 @@
+.container {
+  background: #f2f4fe;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  color: #8a8f99;
+  justify-content: space-between;
+  border-radius: 5px;
+
+  >div {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin-top: 10px;
+      background: white;
+      color: #8a8f99;
+      font-size: large;
+      outline: none;
+      border-radius: 5px;
+    }
+  }
+
+  .searchBtn {
+    padding: 0 50px;
+    background: lightseagreen;
+    outline: none;
+    border-radius: 5px;
+  }
+}
