@@ -4,20 +4,27 @@
   padding: 20px 50px;
   display: flex;
   color: #8a8f99;
-  justify-content: space-between;
   border-radius: 5px;
-
-  >div {
+  flex-direction: column;
+  
+  .topbar {
     display: flex;
-    flex-direction: column;
-
-    input {
-      margin-top: 10px;
-      background: white;
-      color: #8a8f99;
-      font-size: large;
-      outline: none;
-      border-radius: 5px;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    >div {
+      display: flex;
+      flex-direction: column;
+  
+      input {
+        margin-top: 10px;
+        background: white;
+        color: #8a8f99;
+        font-size: large;
+        outline: none;
+        outline: solid black 1px;
+        border: none;
+        padding: 3px 5px;
+      }
     }
   }
 
@@ -26,5 +33,24 @@
     background: lightseagreen;
     outline: none;
     border-radius: 5px;
+  }
+}
+
+.locales {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  justify-content: space-between;
+  .locale {
+    padding: 5px 3px;
+    width: 200px;
+    
+    label {
+      padding-left: 10px;
+    }
+    
+    input {
+      color: white;
+    }
   }
 }

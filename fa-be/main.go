@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fa-be/utils"
 
 	"github.com/gofiber/fiber/v2"
@@ -10,18 +11,25 @@ import (
 func main() {
 	app := fiber.New()
 	app.Use(cors.New())
-	app.Get("/api", func(c *fiber.Ctx) error {
-		loacales := [7]string{
-			"TW",
-			"NG",
-			"US",
-			"GH",
-			"ES",
-			"NL",
-			"DE",
+	app.Post("/api/search", func(c *fiber.Ctx) error {
+		payload := struct {
+			Locales []string `json:"locales" form:"locales"`
+		}{}
+
+		err := c.BodyParser(&payload)
+
+		if c.Query("searchTerm") == "" {
+			return c.Status(400).SendString("No Search Term Supplied")
 		}
-		data, _ := utils.ScrapeData(loacales[:])
-		return c.SendString(string(data))
+
+		if err != nil {
+			return c.Status(400).SendString("No Locales Supplied")
+		}
+
+		data, _ := utils.ScrapeData(payload.Locales, c.Query("searchTerm"), c.Query("keyword"))
+
+		byteArr, _ := json.Marshal(data)
+		return c.SendString(string(byteArr))
 	})
 
 	app.Listen(":9000")
