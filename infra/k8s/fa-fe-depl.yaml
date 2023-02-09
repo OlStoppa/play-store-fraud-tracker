@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fa-fe-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fa-fe
+  template:
+    metadata:
+      labels:
+        app: fa-fe
+    spec:
+      containers:
+        - name: fa-fe
+          image: ollystoppa/fa-fe
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fa-fe-clusterip-srv
+spec:
+  selector:
+    app: fa-fe
+  ports:
+    - name: fa-fe
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
+      
+    

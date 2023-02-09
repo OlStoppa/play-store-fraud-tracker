@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fa-be-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fa-be
+  template:
+    metadata:
+      labels:
+        app: fa-be
+    spec:
+      containers:
+        - name: fa-be
+          image: ollystoppa/fa-be
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fa-be-clusterip-srv
+spec:
+  selector:
+    app: fa-be
+  ports:
+    - name: fa-be
+      protocol: TCP
+      port: 9000
+      targetPort: 9000
+  

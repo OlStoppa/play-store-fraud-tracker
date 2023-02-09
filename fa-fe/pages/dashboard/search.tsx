@@ -17,7 +17,7 @@ export default function Page() {
 
   const fetchResults = ({ searchTerm, keyword }: { searchTerm: string, keyword: string}) => {
     setLoading(true);
-    const url = `http://localhost:9000/api/search?searchTerm=${searchTerm}&keyword=${keyword}`;
+    const url = `/api/search?searchTerm=${searchTerm}&keyword=${keyword}`;
     fetch(url, {
       method: 'POST',
       headers: {

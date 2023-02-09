@@ -13,7 +13,7 @@ export default function AppBox({ appData }: { appData: App }) {
           <div className={styles.titles}>
             <h5>{appData.name}</h5>
             <span>{appData.author}</span>
-            <span>{appData.rating}✭</span>
+            {appData.rating && <span>{appData.rating}✭</span>}
           </div>
         </div>
       </a>
