@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fa-be-postgres-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fa-be-postgres
+  template:
+    metadata:
+      labels:
+        app: fa-be-postgres
+    spec:
+      containers:
+        - name: fa-be-postgres
+          image: postgres
+          envFrom:
+            - configMapRef:
+                name: postgres-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fa-be-postgres-srv
+spec:
+  selector:
+    app: fa-be-postgres
+  ports:
+    - name: db
+      protocol: TCP
+      port: 5432
+      targetPort: 5432
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-secret
+  labels:
+    app: fa-be-postgres
+data:
+  POSTGRES_DB: db
+  POSTGRES_USER: appuser
+  POSTGRES_PASSWORD: strongpasswordapp
+

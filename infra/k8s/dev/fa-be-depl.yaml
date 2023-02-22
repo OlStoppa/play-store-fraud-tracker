@@ -14,7 +14,18 @@ spec:
     spec:
       containers:
         - name: fa-be
-          image: ollystoppa/fa-be
+          image: olstoppa/fa-be
+          env:
+            - name: JWT_KEY
+              value: "asdf"
+            - name: DOMAIN
+              value: "fa.com"
+            - name: POSTGRES_DB
+              value: "db"
+            - name: POSTGRES_USER
+              value: "appuser"
+            - name: POSTGRES_PASSWORD
+              value: "strongpasswordapp"
 ---
 apiVersion: v1
 kind: Service

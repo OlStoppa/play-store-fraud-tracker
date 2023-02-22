@@ -4,7 +4,7 @@ import { App } from '../types/index'
 export default function AppBox({ appData }: { appData: App }) {
   return (
     <div className={styles.container}>
-      <a href={appData.link} rel="noopener noreferrer" target="_blank">
+      <a href={appData.link} rel="noopener noreferrer" target="_blank" className={styles.linkContainer}>
         <div className={styles.imgbox}>
           <img src={appData.imgSrc} />
         </div>

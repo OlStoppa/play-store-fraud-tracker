@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: fa-fe
-          image: ollystoppa/fa-fe
+          image: olstoppa/fa-fe
 ---
 apiVersion: v1
 kind: Service

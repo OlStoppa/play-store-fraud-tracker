@@ -1,0 +1,72 @@
+
+  $color1: #36e6fd;
+  $color2: #526470;
+  $color2Hover: #415059;
+  $color3: #fff;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  background: black;
+}
+
+.login {
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  margin-bottom: 20px;
+  
+  /* Flex */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputField {
+  background-color: transparent;
+  width: 220px;
+  padding: 0 0 10px 5px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: $color2;
+  /* Border */
+  border: none;
+  border-bottom: solid 1px $color2;
+  border-radius: 0;
+  margin-bottom: 30px;
+}
+
+.inputField:focus-visible {
+  border-bottom: solid 2px $color2Hover;
+  outline: none;
+}
+
+.submitButton {
+  background-color: $color2;
+  color: $color3;
+  width: 220px;
+  padding: 15px 0;
+  font-size: 14px;
+  cursor: pointer;
+
+  /* Text */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* Border */
+  border: none;
+  border-radius: 50px;
+}
+
+.submitButton:hover {
+  background-color: $color2Hover;
+}

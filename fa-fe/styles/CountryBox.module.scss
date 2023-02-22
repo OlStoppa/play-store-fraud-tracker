@@ -4,12 +4,14 @@
   padding: 5px;
   display: flex;
   color: #8a8f99;
+  max-width: 100%;
+  flex-direction: column;
 }
 
 .title {
   display: flex;
   align-items: center;
-  padding: 0 5px;
+  padding: 5px 5px;
 }
 
 .apps {
@@ -18,4 +20,5 @@
   display: flex;
   gap: 20px;
   border-radius: 10px;
+  flex-wrap: wrap;
 }

@@ -22,4 +22,4 @@ spec:
               service:
                 name: fa-fe-clusterip-srv
                 port:
-                  number: 3000
+                  number: 3000            

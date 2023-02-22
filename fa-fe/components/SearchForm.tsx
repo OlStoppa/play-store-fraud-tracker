@@ -31,6 +31,7 @@ export default function searchForm({ fetchResults, selectedLocales, updateLocale
 
   return (
     <div className={styles.container}>
+      { isLoading && <div className={styles.loading}/>}
       <div className={styles.topbar}>
         <div>
           <span>Search Term:</span>
@@ -49,7 +50,7 @@ export default function searchForm({ fetchResults, selectedLocales, updateLocale
         </div>
         <button
           onClick={() => fetchResults({ searchTerm, keyword })}
-          disabled={!searchTerm.length || !keyword.length || !selectedLocales.length || isLoading }
+          disabled={!searchTerm.length || !selectedLocales.length || isLoading }
           className={styles.searchBtn}
         >
           Search

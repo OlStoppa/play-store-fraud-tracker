@@ -3,16 +3,16 @@ kind: Config
 deploy:
   kubectl:
     manifests:
-      - ./infra/k8s/*
+      - ./infra/k8s/dev/*
 build:
   local:
     push: false
   artifacts:
-    - image: ollystoppa/fa-be
+    - image: olstoppa/fa-be
       context: fa-be
       docker:
         dockerfile: Dockerfile
-    - image: ollystoppa/fa-fe
+    - image: olstoppa/fa-fe
       context: fa-fe
       docker:
         dockerfile: Dockerfile
